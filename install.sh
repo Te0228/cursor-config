@@ -2,14 +2,14 @@
 
 echo "🚀 Installing Cursor configuration..."
 
+# 备份现有配置
+if [ -d ~/.cursor ]; then
+    echo "📦 Backing up existing configuration..."
+    cp -r ~/.cursor ~/.cursor.backup.$(date +%Y%m%d_%H%M%S)
+fi
+
 # 创建 cursor 配置目录（如果不存在）
 mkdir -p ~/.cursor/commands
-
-# 备份现有配置
-if [ -d ~/.cursor/commands ]; then
-    echo "📦 Backing up existing configuration..."
-    cp -r ~/.cursor/commands ~/.cursor/commands.backup.$(date +%Y%m%d_%H%M%S)
-fi
 
 # 安装新配置 - 复制所有 .md 文件
 echo "📝 Installing commands..."
