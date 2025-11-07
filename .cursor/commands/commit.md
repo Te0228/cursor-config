@@ -1,6 +1,8 @@
 ---
 name: commit
-description: Commit changes without pushing (max 10 words message)
+description: Commit all changes including untracked files (max 10 words)
 ---
 
-Generate a commit message (max 10 words) based on current git changes, then execute: git commit -am "<your_message>"
+Generate a commit message (max 10 words) based on current git changes, then execute:
+
+git add -A && git commit -m "<your_message>"
